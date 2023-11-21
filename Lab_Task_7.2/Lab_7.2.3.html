@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gender Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend>GENDER</legend>
+        <form id="genderForm" onsubmit="return radioval()">
+            <input type="radio" name="gender" value="0" /> Male
+            <input type="radio" name="gender" value="1" /> Female
+            <input type="radio" name="gender" value="2" /> Other
+            <br><hr>
+            <input type="submit" value="submit" />
+        </form>
+    </fieldset>
+
+    <script>
+        function radioval() 
+        {
+            let selectedValue = document.querySelector('input[name="gender"]:checked');
+
+            if (selectedValue)             
+            {
+                let gender = selectedValue.value;
+
+                if (gender === "0")                 
+                {
+                    alert("Selected Male.");
+                }                 
+                else if (gender === "1")                 
+                {
+                    alert("Selected Female.");
+                }                
+                else if (gender === "2")                
+                {
+                    alert("Selected Other.");
+                }
+            }             
+            else 
+            {
+                alert("Please select any option.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
